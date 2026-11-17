@@ -1,0 +1,8 @@
+{
+  "name": "AstroRashi — Modern Vedic Astrology & Cosmic Intelligence",
+  "description": "AstroRashi is an ultra-modern AI-powered Vedic astrology platform, authentic Lagna chart suite, Kundli matching engine, and Panchang calendar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

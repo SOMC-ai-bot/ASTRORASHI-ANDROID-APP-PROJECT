@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Exact User-Specified Color Palette */
+  --background: #050608;
+  --surface: #101722;
+  --card: #25282E;
+
+  --primary: #11A8EB;
+  --primary-hover: #078CCB;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #D5D7DA;
+  --text-muted: #A6A9AF;
+
+  --grey: #41454D;
+  --grey-light: #737780;
+
+  --border: #41454D;
+  --shadow: #000000;
+
+  /* Aliased System Tokens Mapped to Exact Theme */
+  --bg-primary: var(--background);
+  --bg-surface: var(--surface);
+  --bg-surface-elevated: var(--surface);
+  --bg-surface-glass: var(--surface);
+  --bg-card: var(--card);
+  --bg-card-hover: #2C3038;
+
+  --gold-primary: var(--primary);
+  --gold-light: #52C2F4;
+  --gold-vibrant: var(--primary);
+  --gold-amber: var(--primary-hover);
+  --gold-glow: transparent;
+  --gold-subtle: rgba(17, 168, 235, 0.12);
+
+  --purple-primary: var(--primary);
+  --purple-light: #52C2F4;
+  --purple-bright: var(--primary);
+  --purple-glow: transparent;
+
+  --theme-orange: var(--primary);
+  --theme-orange-light: #52C2F4;
+
+  --border-subtle: var(--border);
+  --border-card: var(--border);
+  --border-card-hover: var(--grey-light);
+  --border-focus: var(--primary);
+  --border-glow-gold: none;
+
+  /* Typography */
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cinzel', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Matte Subtle Shadows (No glowing) */
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 6px 22px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text-primary);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100dvh;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  position: relative;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+section, article, .glass-panel, .custom-card {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Matte Solid Backgrounds (No Gradients, No Glowing) */
+.cosmic-bg {
+  background-color: var(--background) !important;
+  background-image: none !important;
+}
+
+/* Matte Solid Buttons */
+.btn-mystic-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: none !important;
+  transition: background 160ms ease, border-color 160ms ease;
+  text-decoration: none;
+}
+
+.btn-mystic-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-mystic-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+  text-decoration: none;
+}
+
+.btn-mystic-outline:hover {
+  background: var(--surface);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+/* Clean Matte Panels */
+.glass-panel {
+  background: var(--card) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md);
+  box-shadow: none !important;
+}
+
+.glass-panel-elevated {
+  background: var(--surface) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: none !important;
+}
+
+/* =========================================================================
+   After-Effects Type Smooth Interactive Animations & Motion System
+   ========================================================================= */
+
+/* Smooth cubic-bezier spring curves */
+:root {
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Fast responsive interaction transitions on all interactive controls */
+button, a, input, select, textarea {
+  transition: transform 140ms var(--ease-spring), background 160ms ease, border-color 160ms ease, color 160ms ease, opacity 140ms ease;
+  will-change: transform;
+}
+
+/* Spring scale click down effect (like iOS / After-Effects tactile button clicks) */
+button:active:not(:disabled), a:active {
+  transform: scale(0.965);
+}
+
+/* Screen & Tab Transition: Cinematic After-Effects style fade & subtle upward glide */
+main > * {
+  animation: afxScreenIn 260ms var(--ease-spring) both;
+  will-change: transform, opacity;
+}
+
+@keyframes afxScreenIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card Subtle Floating Elevation on hover */
+.custom-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: transform 220ms var(--ease-spring), border-color 200ms ease, background 200ms ease;
+  box-shadow: none !important;
+  will-change: transform;
+}
+
+.custom-card:hover {
+  transform: translateY(-3px) scale(1.006);
+  border-color: var(--primary);
+}
+
+/* Modal Open: Pop and smooth scale motion */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Matte Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-light);
+}
+
+::selection {
+  background: var(--primary);
+  color: #FFFFFF;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Universal Tool Split Layout */
+.tool-calculator-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .tool-calculator-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Mobile View Enhancements */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 96px !important;
+  }
+
+  .grid {
+    gap: 12px !important;
+  }
+
+  button, a {
+    word-break: break-word;
+  }
+
+  .cosmic-card {
+    padding: 14px !important;
+    background: var(--card) !important;
+    border-color: var(--border) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: 100px !important;
+  }
+
+  .reports-header-card {
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+}
+
+main > * {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+select {
+  max-width: 100%;
+  box-sizing: border-box;
+}
